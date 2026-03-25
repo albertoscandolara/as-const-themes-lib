@@ -1,0 +1,7 @@
+{
+  "entryPoints": ["src/library/main.ts"],
+  "out": "docs",
+  "theme": "default",
+  "includeVersion": true,
+  "exclude": ["**/node_modules/**", "**/*.spec.ts", "**/dist/**"]
+}

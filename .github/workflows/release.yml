@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout repository
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2. Setup Node.js
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: 'https://registry.npmjs.org/'
+
+      # 3. Configure npm authentication using environment variable
+      - name: Configure npm authentication
+        run: |
+          echo "@albi_scando:registry=https://registry.npmjs.org/" >> ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${NPM_PORTFOLIO_TOKEN}" >> ~/.npmrc
+          echo "always-auth=true" >> ~/.npmrc
+        env:
+          NPM_PORTFOLIO_TOKEN: ${{ secrets.NPM_PORTFOLIO_TOKEN }}
+
+      # 4. Install dependencies
+      - name: Install dependencies
+        run: npm ci
+        env:
+          NPM_PORTFOLIO_TOKEN: ${{ secrets.NPM_PORTFOLIO_TOKEN }}
+
+      # 5. Build the project
+      - name: Build
+        run: npm run build
+
+      # 6. Release using semantic-release
+      - name: Release
+        run: npx semantic-release
+        env:
+          HUSKY: 0
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_PORTFOLIO_TOKEN: ${{ secrets.NPM_PORTFOLIO_TOKEN }}

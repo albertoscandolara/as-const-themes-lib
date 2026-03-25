@@ -1,0 +1,90 @@
+{
+  "name": "@albi_scando/as-const-themes-lib",
+  "version": "0.0.1",
+  "description": "A TypeScript library providing strongly typed themes-related constants and utility types for safer, more predictable code.",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertoscandolara/as-const-themes-lib"
+  },
+  "author": "Alberto Scandolara",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/albertoscandolara/as-const-themes-lib/issues"
+  },
+  "homepage": "https://github.com/albertoscandolara/as-const-themes-lib#readme",
+  "main": "./dist/as-const-themes-lib.umd.js",
+  "module": "./dist/as-const-themes-lib.es.js",
+  "typings": "./dist/types/main.d.ts",
+  "scripts": {
+    "build": "tsc && vite build",
+    "commit": "cz",
+    "dev": "vite serve ./src/playground",
+    "docs:build": "typedoc",
+    "docs:serve": "npx http-server docs -o",
+    "formatter": "npm run prettier && npm run lint",
+    "formatter:fix": "npm run prettier:fix && npm run lint:fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky",
+    "preview": "vite preview",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write",
+    "release": "semantic-release",
+    "release:dry": "semantic-release --dry-run"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.4.1",
+    "@commitlint/config-conventional": "^20.4.1",
+    "@eslint/js": "^9.39.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.3",
+    "@semantic-release/npm": "^13.1.3",
+    "@types/node": "^25.2.1",
+    "@types/numeric": "^1.2.6",
+    "@vitest/coverage-v8": "^4.0.18",
+    "branch-name-lint": "^3.0.1",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import-x": "^4.16.1",
+    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-regexp": "^3.0.0",
+    "eslint-plugin-security": "^3.0.1",
+    "globals": "^17.3.0",
+    "http-server": "^14.1.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "3.8.1",
+    "sass": "^1.97.3",
+    "semantic-release": "^25.0.3",
+    "typedoc": "^0.28.16",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0",
+    "validate-branch-name": "^1.3.2",
+    "vite": "^7.3.1",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-plugin-static-copy": "^3.2.0"
+  },
+  "packageManager": "pnpm@10.28.2",
+  "engines": {
+    "node": ">=22.11.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.ts": "prettier --write",
+    "*.{js,scss,css,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
