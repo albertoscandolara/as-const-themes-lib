@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/albertoscandolara/as-const-themes-lib/compare/v1.0.1...v1.0.2) (2026-04-08)
+
+
+### Bug Fixes
+
+* added new themes to mapper ([04d89ea](https://github.com/albertoscandolara/as-const-themes-lib/commit/04d89ea69f08908f06acebe45dc2f9e89979e719))
+
 ## [1.0.1](https://github.com/albertoscandolara/as-const-themes-lib/compare/v1.0.0...v1.0.1) (2026-04-08)
 
 
