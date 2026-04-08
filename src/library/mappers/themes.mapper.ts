@@ -14,6 +14,16 @@ import type { Themes } from '../types/themes.type';
  */
 export const THEMES_MAPPER = new Map<Themes, ThemesInfo>([
   [
+    THEMES.COSMO,
+    {
+      description: THEME_DESCRIPTIONS.COSMO,
+      icon: THEME_ICONS.COSMO,
+      id: THEMES.COSMO,
+      name: THEME_NAMES.COSMO,
+      value: THEME_VALUES.COSMO,
+    },
+  ],
+  [
     THEMES.DARK,
     {
       description: THEME_DESCRIPTIONS.DARK,
@@ -44,6 +54,26 @@ export const THEMES_MAPPER = new Map<Themes, ThemesInfo>([
     },
   ],
   [
+    THEMES.FIRE,
+    {
+      description: THEME_DESCRIPTIONS.FIRE,
+      icon: THEME_ICONS.FIRE,
+      id: THEMES.FIRE,
+      name: THEME_NAMES.FIRE,
+      value: THEME_VALUES.FIRE,
+    },
+  ],
+  [
+    THEMES.FOREST,
+    {
+      description: THEME_DESCRIPTIONS.FOREST,
+      icon: THEME_ICONS.FOREST,
+      id: THEMES.FOREST,
+      name: THEME_NAMES.FOREST,
+      value: THEME_VALUES.FOREST,
+    },
+  ],
+  [
     THEMES.LIGHT,
     {
       description: THEME_DESCRIPTIONS.LIGHT,
@@ -61,6 +91,16 @@ export const THEMES_MAPPER = new Map<Themes, ThemesInfo>([
       id: THEMES.LIGHT_BLUE,
       name: THEME_NAMES.LIGHT_BLUE,
       value: THEME_VALUES.LIGHT_BLUE,
+    },
+  ],
+  [
+    THEMES.WATER,
+    {
+      description: THEME_DESCRIPTIONS.WATER,
+      icon: THEME_ICONS.WATER,
+      id: THEMES.WATER,
+      name: THEME_NAMES.WATER,
+      value: THEME_VALUES.WATER,
     },
   ],
 ]);
